@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2. Fórmula y cálculo | Coeficiente de Pearson</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]});"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>2.1.1 Coeficiente de Correlación de Pearson</h1>
+      <p>2. Fórmula y cálculo</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <a href="index.html">Inicio</a>
+      <a href="01-introduccion.html">1. Introducción</a>
+      <a href="02-formula-y-calculo.html" class="active">2. Fórmula</a>
+      <a href="03-interpretacion.html">3. Interpretación</a>
+      <a href="04-propiedades.html">4. Propiedades</a>
+      <a href="05-ejemplos.html">5. Ejemplos</a>
+      <a href="ejercicios/ejercicios-manuales.html">Ejercicios</a>
+    </div>
+  </nav>
+
+  <main>
+    <h2>Fórmula principal</h2>
+    <p>La fórmula más utilizada del coeficiente de correlación de Pearson es:</p>
+    <div class="math-block">
+      \[ r = \dfrac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^{n} (x_i - \bar{x})^2 \cdot \sum_{i=1}^{n} (y_i - \bar{y})^2}} \]
+    </div>
+    <p>Donde:</p>
+    <ul>
+      <li>\( x_i, y_i \) = valores individuales de las variables X e Y</li>
+      <li>\( \bar{x}, \bar{y} \) = medias aritméticas de X e Y</li>
+      <li>\( n \) = número de pares de observaciones</li>
+    </ul>
+
+    <h2>Fórmula alternativa (usando covarianza)</h2>
+    <div class="math-block">
+      \[ r = \dfrac{\mathrm{Cov}(X, Y)}{s_x \cdot s_y} \]
+    </div>
+    <p>
+      Donde \(\mathrm{Cov}(X,Y)\) es la covarianza muestral y \( s_x \), \( s_y \) son las desviaciones
+      estándar muestrales. Esta forma muestra que Pearson es una <strong>covarianza estandarizada</strong>.
+    </p>
+
+    <h2>Fórmula de cálculo directo (para cuaderno)</h2>
+    <p>La más práctica para calcular a mano:</p>
+    <div class="math-block">
+      \[ r = \dfrac{n\sum xy - (\sum x)(\sum y)}{\sqrt{\bigl[n\sum x^2 - (\sum x)^2\bigr]\bigl[n\sum y^2 - (\sum y)^2\bigr]}} \]
+    </div>
+
+    <h2>Procedimiento paso a paso (cálculo manual)</h2>
+    <ol>
+      <li>Construir una tabla con las columnas: \( x \), \( y \), \( x^2 \), \( y^2 \), \( xy \).</li>
+      <li>Calcular las sumatorias: \( \sum x \), \( \sum y \), \( \sum x^2 \), \( \sum y^2 \), \( \sum xy \) y \( n \).</li>
+      <li>Sustituir los valores en la fórmula de cálculo directo.</li>
+      <li>Realizar las operaciones con cuidado.</li>
+      <li>Redondear el resultado final (normalmente a 3 o 4 decimales).</li>
+    </ol>
+
+    <h2>Ejemplo numérico completo</h2>
+    <p>Datos de 5 estudiantes (horas de estudio vs calificación):</p>
+    <table>
+      <thead>
+        <tr><th>Estudiante</th><th>Horas (\( x \))</th><th>Calificación (\( y \))</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>2</td><td>65</td></tr>
+        <tr><td>2</td><td>3</td><td>70</td></tr>
+        <tr><td>3</td><td>5</td><td>80</td></tr>
+        <tr><td>4</td><td>6</td><td>85</td></tr>
+        <tr><td>5</td><td>8</td><td>95</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Paso 1: Tabla de cálculo</h3>
+    <table>
+      <thead>
+        <tr><th>\( x \)</th><th>\( y \)</th><th>\( x^2 \)</th><th>\( y^2 \)</th><th>\( xy \)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>2</td><td>65</td><td>4</td><td>4225</td><td>130</td></tr>
+        <tr><td>3</td><td>70</td><td>9</td><td>4900</td><td>210</td></tr>
+        <tr><td>5</td><td>80</td><td>25</td><td>6400</td><td>400</td></tr>
+        <tr><td>6</td><td>85</td><td>36</td><td>7225</td><td>510</td></tr>
+        <tr><td>8</td><td>95</td><td>64</td><td>9025</td><td>760</td></tr>
+        <tr><td><strong>Σ = 24</strong></td><td><strong>395</strong></td><td><strong>138</strong></td><td><strong>31775</strong></td><td><strong>2010</strong></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Paso 2–4: Sustitución y resultado</h3>
+    <div class="math-block">
+      \[ r = \dfrac{5(2010) - (24)(395)}{\sqrt{\bigl[5(138)-(24)^2\bigr]\bigl[5(31775)-(395)^2\bigr]}} = \dfrac{570}{570} = 1 \]
+    </div>
+
+    <div class="card success">
+      <strong>Resultado:</strong> \( r = 1 \)<br>
+      Existe una correlación lineal positiva <strong>perfecta</strong> entre las horas de estudio y la calificación
+      en este pequeño conjunto de datos.
+    </div>
+
+    <div class="nota">
+      <strong>Recomendaciones para el cálculo manual:</strong>
+      <ul style="margin-bottom:0;">
+        <li>Usa siempre una tabla ordenada.</li>
+        <li>Verifica dos veces las sumatorias.</li>
+        <li>Mantén varios decimales en cálculos intermedios y redondea solo al final.</li>
+        <li>Si el denominador es 0, una variable es constante y no se puede calcular la correlación.</li>
+      </ul>
+    </div>
+
+    <p style="margin-top:2rem;">
+      <a class="btn btn-outline" href="01-introduccion.html">← Anterior</a>
+      <a class="btn" href="03-interpretacion.html">Siguiente: Interpretación →</a>
+    </p>
+  </main>
+
+  <footer>
+    <p>Material generado para la asignatura GAD-2401 · Uso educativo</p>
+  </footer>
+</body>
+</html>

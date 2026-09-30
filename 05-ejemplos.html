@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5. Ejemplos aplicados | Coeficiente de Pearson</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]});"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>2.1.1 Coeficiente de Correlación de Pearson</h1>
+      <p>5. Ejemplos aplicados</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <a href="index.html">Inicio</a>
+      <a href="01-introduccion.html">1. Introducción</a>
+      <a href="02-formula-y-calculo.html">2. Fórmula</a>
+      <a href="03-interpretacion.html">3. Interpretación</a>
+      <a href="04-propiedades.html">4. Propiedades</a>
+      <a href="05-ejemplos.html" class="active">5. Ejemplos</a>
+      <a href="ejercicios/ejercicios-manuales.html">Ejercicios</a>
+    </div>
+  </nav>
+
+  <main>
+    <h2>Ejemplo 1: Educación</h2>
+    <div class="card">
+      <p><strong>Pregunta:</strong> ¿Existe relación lineal entre horas de estudio semanal y promedio de calificaciones?</p>
+      <ul>
+        <li>Datos de 80 estudiantes</li>
+        <li>\( r = 0.72 \), \( p &lt; 0.001 \)</li>
+      </ul>
+      <p>
+        <strong>Interpretación:</strong> Correlación positiva fuerte y estadísticamente significativa.
+        Los estudiantes que dedican más horas al estudio tienden a obtener mejores calificaciones.
+        (Esto no prueba causalidad exclusiva; pueden influir motivación, método de estudio, etc.)
+      </p>
+    </div>
+
+    <h2>Ejemplo 2: Salud</h2>
+    <div class="card">
+      <p><strong>Pregunta:</strong> ¿Hay relación entre el IMC y los niveles de colesterol LDL?</p>
+      <ul>
+        <li>Muestra de 250 adultos</li>
+        <li>\( r = 0.41 \), \( p &lt; 0.001 \)</li>
+      </ul>
+      <p>
+        <strong>Interpretación:</strong> Correlación positiva moderada y significativa. A mayor IMC se
+        observan, en promedio, niveles más altos de colesterol LDL. Motiva estudios más profundos
+        (ajustando por edad, dieta, ejercicio…).
+      </p>
+    </div>
+
+    <h2>Ejemplo 3: Marketing / Negocios</h2>
+    <div class="card">
+      <p><strong>Pregunta:</strong> ¿La inversión en publicidad digital está relacionada con las ventas mensuales?</p>
+      <ul>
+        <li>Datos de 36 meses</li>
+        <li>\( r = 0.58 \), \( p = 0.0002 \)</li>
+      </ul>
+      <p>
+        <strong>Interpretación:</strong> Correlación positiva moderada-fuerte. Asociación clara entre mayor
+        inversión publicitaria y mayores ventas. Útil para justificaciones de presupuesto; complementar
+        con modelos que controlen estacionalidad, precio, competencia…
+      </p>
+    </div>
+
+    <h2>Ejemplo 4: Ingeniería / Calidad</h2>
+    <div class="card">
+      <p><strong>Pregunta:</strong> ¿Existe relación entre temperatura de operación y porcentaje de piezas defectuosas?</p>
+      <ul>
+        <li>\( r = 0.83 \), \( p &lt; 0.001 \)</li>
+      </ul>
+      <p>
+        <strong>Interpretación:</strong> Correlación positiva muy fuerte. A mayor temperatura, mayor
+        porcentaje de defectos. Puede llevar a establecer límites de temperatura más estrictos.
+      </p>
+    </div>
+
+    <h2>Ejemplo 5: Caso en el que Pearson falla</h2>
+    <div class="card warning">
+      <p>
+        Se mide la relación entre dosis de un fármaco y efecto terapéutico (curva sigmoidea).
+        Pearson da \( r = 0.22 \) (débil), pero visualmente hay una relación clara no lineal.
+      </p>
+      <p style="margin-bottom:0;">
+        <strong>Lección:</strong> Siempre graficar. En este caso conviene un modelo no lineal u otras técnicas.
+      </p>
+    </div>
+
+    <h2>Ejemplo 6: Efecto de un outlier</h2>
+    <div class="card warning">
+      <p>
+        Datos originales: \( r = 0.15 \) (casi nula).<br>
+        Se agrega un punto extremo: \( r \) pasa a \( 0.67 \).
+      </p>
+      <p style="margin-bottom:0;">
+        <strong>Lección:</strong> Un solo valor atípico puede distorsionar completamente la conclusión.
+        Visualización y análisis de outliers son obligatorios.
+      </p>
+    </div>
+
+    <h2>Cómo reportar resultados</h2>
+    <p>Incluye como mínimo:</p>
+    <ol>
+      <li>El valor de \( r \) (2 o 3 decimales)</li>
+      <li>El valor p</li>
+      <li>El tamaño de la muestra (\( n \))</li>
+      <li>Una interpretación en lenguaje claro</li>
+      <li>Mención a si se revisó el diagrama de dispersión y los supuestos</li>
+    </ol>
+
+    <div class="card success">
+      <strong>Ejemplo de redacción correcta:</strong>
+      <p style="margin-bottom:0; font-style:italic;">
+        «Se encontró una correlación positiva fuerte y estadísticamente significativa entre las horas de
+        estudio y el promedio de calificaciones (\( r = 0.72 \), \( p &lt; 0.001 \), \( n = 80 \)). El diagrama
+        de dispersión mostró una tendencia lineal clara sin presencia de valores atípicos extremos.»
+      </p>
+    </div>
+
+    <p style="margin-top:2rem;">
+      <a class="btn btn-outline" href="04-propiedades.html">← Anterior</a>
+      <a class="btn" href="ejercicios/ejercicios-manuales.html">Ir a Ejercicios manuales →</a>
+    </p>
+  </main>
+
+  <footer>
+    <p>Material generado para la asignatura GAD-2401 · Uso educativo</p>
+  </footer>
+</body>
+</html>

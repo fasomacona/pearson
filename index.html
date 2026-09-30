@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2.1.1 Coeficiente de Pearson | GAD-2401</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]});"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>2.1.1 Coeficiente de Correlación de Pearson</h1>
+      <p>Análisis y visualización de datos (GAD-2401) · Ingeniería Informática</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <a href="index.html" class="active">Inicio</a>
+      <a href="01-introduccion.html">1. Introducción</a>
+      <a href="02-formula-y-calculo.html">2. Fórmula</a>
+      <a href="03-interpretacion.html">3. Interpretación</a>
+      <a href="04-propiedades.html">4. Propiedades</a>
+      <a href="05-ejemplos.html">5. Ejemplos</a>
+      <a href="ejercicios/ejercicios-manuales.html">Ejercicios</a>
+    </div>
+  </nav>
+
+  <main>
+    <h2>Bienvenido al módulo</h2>
+    <p>
+      Este material desarrolla de forma completa el <strong>Coeficiente de Correlación de Pearson</strong> (\( r \)),
+      una de las medidas más utilizadas en estadística y ciencia de datos para cuantificar la fuerza y dirección
+      de la relación lineal entre dos variables cuantitativas.
+    </p>
+
+    <div class="card highlight">
+      <h3 style="margin-top:0;">Objetivos de aprendizaje</h3>
+      <ol>
+        <li>Explicar el significado del coeficiente de Pearson y su rango de valores.</li>
+        <li>Calcular el coeficiente de forma <strong>manual</strong> (paso a paso) y mediante software.</li>
+        <li>Interpretar correctamente el valor de \( r \) y el valor p asociado.</li>
+        <li>Verificar los supuestos necesarios para su aplicación válida.</li>
+        <li>Identificar las limitaciones del coeficiente (outliers, no linealidad, etc.).</li>
+        <li>Aplicar el coeficiente a conjuntos de datos reales y comunicar los resultados.</li>
+      </ol>
+    </div>
+
+    <h2>Contenido del módulo</h2>
+    <div class="grid">
+      <div class="card">
+        <h4><a href="01-introduccion.html">1. Introducción</a></h4>
+        <p>Concepto, historia breve, significado y cuándo se utiliza el coeficiente de Pearson.</p>
+      </div>
+      <div class="card">
+        <h4><a href="02-formula-y-calculo.html">2. Fórmula y cálculo</a></h4>
+        <p>Fórmulas, procedimiento paso a paso y ejemplo numérico resuelto a mano.</p>
+      </div>
+      <div class="card">
+        <h4><a href="03-interpretacion.html">3. Interpretación y supuestos</a></h4>
+        <p>Cómo interpretar \( r \), el valor p, y los supuestos que deben cumplirse.</p>
+      </div>
+      <div class="card">
+        <h4><a href="04-propiedades.html">4. Propiedades y limitaciones</a></h4>
+        <p>Propiedades matemáticas, limitaciones importantes y cuándo no usarlo.</p>
+      </div>
+      <div class="card">
+        <h4><a href="05-ejemplos.html">5. Ejemplos aplicados</a></h4>
+        <p>Casos reales en educación, salud, marketing e ingeniería.</p>
+      </div>
+      <div class="card">
+        <h4><a href="ejercicios/ejercicios-manuales.html">Ejercicios manuales</a></h4>
+        <p>Ejercicios para resolver a mano en cuaderno (sin calculadora ni código).</p>
+      </div>
+    </div>
+
+    <h2>Práctica en Jupyter Notebook</h2>
+    <div class="card success">
+      <p>
+        Descarga y ejecuta el notebook de práctica. Incluye verificación de los ejercicios manuales,
+        visualizaciones y aplicación a un dataset real.
+      </p>
+      <a class="btn" href="practica/practica_pearson.ipynb" download>Descargar practica_pearson.ipynb</a>
+      <p style="margin-top:1rem; font-size:0.9rem; color:var(--text-light);">
+        También puedes abrirlo en <strong>Google Colab</strong>: sube el archivo en
+        <a href="https://colab.research.google.com" target="_blank">colab.research.google.com</a>
+      </p>
+    </div>
+
+    <h2>Cómo usar este material</h2>
+    <ol>
+      <li>Lee las páginas de teoría <strong>en orden</strong> (1 → 5).</li>
+      <li>Resuelve primero los <strong>ejercicios manuales</strong> en tu cuaderno.</li>
+      <li>Abre el notebook de práctica y ejecuta las celdas.</li>
+      <li>Compara tus resultados manuales con los obtenidos por código.</li>
+      <li>Completa los ejercicios adicionales del notebook.</li>
+    </ol>
+
+    <div class="nota">
+      <strong>Requisitos previos:</strong> Conceptos básicos de media, desviación estándar y covarianza.
+      Manejo elemental de Python (<code>pandas</code>, <code>numpy</code>, <code>scipy</code>, <code>seaborn</code>).
+    </div>
+  </main>
+
+  <footer>
+    <p>Material generado para la asignatura GAD-2401 · Tecnológico de Estudios Superiores de Chalco · 2026</p>
+    <p>Uso educativo</p>
+  </footer>
+</body>
+</html>

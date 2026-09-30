@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4. Propiedades y limitaciones | Coeficiente de Pearson</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]});"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>2.1.1 Coeficiente de Correlación de Pearson</h1>
+      <p>4. Propiedades y limitaciones</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <a href="index.html">Inicio</a>
+      <a href="01-introduccion.html">1. Introducción</a>
+      <a href="02-formula-y-calculo.html">2. Fórmula</a>
+      <a href="03-interpretacion.html">3. Interpretación</a>
+      <a href="04-propiedades.html" class="active">4. Propiedades</a>
+      <a href="05-ejemplos.html">5. Ejemplos</a>
+      <a href="ejercicios/ejercicios-manuales.html">Ejercicios</a>
+    </div>
+  </nav>
+
+  <main>
+    <h2>Propiedades matemáticas importantes</h2>
+    <ol>
+      <li>
+        <strong>Simetría:</strong> \( r_{xy} = r_{yx} \). El coeficiente es el mismo sin importar qué variable
+        se considera X o Y.
+      </li>
+      <li>
+        <strong>Invarianza ante cambios de escala y origen:</strong> Si transformamos
+        \( x' = a + bx \) (\( b&gt;0 \)) y \( y' = c + dy \) (\( d&gt;0 \)), entonces \( r_{x'y'} = r_{xy} \).
+      </li>
+      <li><strong>Rango acotado:</strong> Siempre se cumple \( -1 \leq r \leq 1 \).</li>
+      <li>
+        <strong>Relación con la regresión lineal:</strong> El coeficiente de determinación \( R^2 \) de una
+        regresión lineal simple es igual a \( r^2 \). Indica la proporción de variabilidad de Y explicada
+        linealmente por X.
+      </li>
+      <li><strong>Sensibilidad a la covarianza:</strong> \( r \) es proporcional a la covarianza estandarizada.</li>
+    </ol>
+
+    <h2>Limitaciones importantes</h2>
+
+    <div class="card warning">
+      <h3 style="margin-top:0;">1. Solo detecta relaciones lineales</h3>
+      <p style="margin-bottom:0;">
+        Si la relación es curva (forma de U, J o S), Pearson puede dar un valor cercano a cero aunque exista
+        una relación fuerte. <strong>Siempre graficar.</strong>
+      </p>
+    </div>
+
+    <div class="card warning">
+      <h3 style="margin-top:0;">2. Muy sensible a valores atípicos (outliers)</h3>
+      <p style="margin-bottom:0;">
+        Un solo punto extremo puede aumentar o disminuir drásticamente el valor de \( r \). Considerar
+        Spearman o Kendall cuando haya outliers.
+      </p>
+    </div>
+
+    <div class="card warning">
+      <h3 style="margin-top:0;">3. No implica causalidad</h3>
+      <p style="margin-bottom:0;">
+        Una correlación alta no significa que una variable cause a la otra.
+      </p>
+    </div>
+
+    <h3>Otras limitaciones</h3>
+    <ul>
+      <li><strong>Restricción de rango:</strong> Si se limita artificialmente el rango de una variable, \( r \) tiende a disminuir.</li>
+      <li><strong>No adecuado para variables categóricas:</strong> Usar chi-cuadrada, Spearman, Kendall, V de Cramer, etc.</li>
+      <li><strong>Dependencia del tamaño muestral para la significación:</strong> Muestras grandes hacen significativas correlaciones pequeñas.</li>
+    </ul>
+
+    <h2>¿Cuándo NO usar Pearson?</h2>
+    <table>
+      <thead>
+        <tr><th>Situación</th><th>Alternativa recomendada</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Relación no lineal</td><td>Spearman, modelos no lineales</td></tr>
+        <tr><td>Presencia de outliers importantes</td><td>Spearman o Kendall</td></tr>
+        <tr><td>Variables ordinales</td><td>Spearman o Kendall</td></tr>
+        <tr><td>Variables categóricas</td><td>Chi-cuadrada + V de Cramer</td></tr>
+        <tr><td>Muestras muy pequeñas</td><td>Kendall (más robusto)</td></tr>
+        <tr><td>Datos con muchos empates</td><td>Kendall</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Resumen de fortalezas y debilidades</h2>
+    <table>
+      <thead>
+        <tr><th>Aspecto</th><th>Valoración</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Facilidad de interpretación</td><td>★★★★★</td></tr>
+        <tr><td>Detección de relaciones lineales</td><td>★★★★★</td></tr>
+        <tr><td>Robustez ante outliers</td><td>★☆☆☆☆</td></tr>
+        <tr><td>Detección de relaciones no lineales</td><td>★☆☆☆☆</td></tr>
+        <tr><td>Uso en ciencia de datos</td><td>Muy frecuente</td></tr>
+      </tbody>
+    </table>
+
+    <div class="nota">
+      <strong>Conclusión:</strong> Pearson es excelente cuando se cumplen sus supuestos (relación lineal,
+      pocos outliers, variables cuantitativas). El analista responsable siempre debe visualizar, verificar
+      supuestos, considerar alternativas y interpretar con cautela.
+    </div>
+
+    <p style="margin-top:2rem;">
+      <a class="btn btn-outline" href="03-interpretacion.html">← Anterior</a>
+      <a class="btn" href="05-ejemplos.html">Siguiente: Ejemplos →</a>
+    </p>
+  </main>
+
+  <footer>
+    <p>Material generado para la asignatura GAD-2401 · Uso educativo</p>
+  </footer>
+</body>
+</html>

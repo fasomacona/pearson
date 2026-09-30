@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3. Interpretación y supuestos | Coeficiente de Pearson</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]});"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>2.1.1 Coeficiente de Correlación de Pearson</h1>
+      <p>3. Interpretación y supuestos</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <a href="index.html">Inicio</a>
+      <a href="01-introduccion.html">1. Introducción</a>
+      <a href="02-formula-y-calculo.html">2. Fórmula</a>
+      <a href="03-interpretacion.html" class="active">3. Interpretación</a>
+      <a href="04-propiedades.html">4. Propiedades</a>
+      <a href="05-ejemplos.html">5. Ejemplos</a>
+      <a href="ejercicios/ejercicios-manuales.html">Ejercicios</a>
+    </div>
+  </nav>
+
+  <main>
+    <h2>Interpretación del valor de \( r \)</h2>
+    <p>El valor de \( r \) se interpreta en dos dimensiones: <strong>dirección</strong> y <strong>fuerza</strong>.</p>
+
+    <h3>Dirección</h3>
+    <ul>
+      <li><strong>Positiva (\( r &gt; 0 \)):</strong> Cuando una variable aumenta, la otra tiende a aumentar.</li>
+      <li><strong>Negativa (\( r &lt; 0 \)):</strong> Cuando una variable aumenta, la otra tiende a disminuir.</li>
+      <li><strong>Cero (\( r \approx 0 \)):</strong> No existe relación lineal detectable.</li>
+    </ul>
+
+    <h3>Fuerza (guía orientativa)</h3>
+    <table>
+      <thead>
+        <tr><th>Rango de \( |r| \)</th><th>Interpretación habitual</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>0.00 – 0.10</td><td>Nula o casi nula</td></tr>
+        <tr><td>0.10 – 0.30</td><td>Débil</td></tr>
+        <tr><td>0.30 – 0.50</td><td>Moderada</td></tr>
+        <tr><td>0.50 – 0.70</td><td>Fuerte</td></tr>
+        <tr><td>0.70 – 0.90</td><td>Muy fuerte</td></tr>
+        <tr><td>0.90 – 1.00</td><td>Casi perfecta / Perfecta</td></tr>
+      </tbody>
+    </table>
+    <div class="nota">
+      Estas categorías son orientativas. En algunos campos (por ejemplo psicología) una correlación de 0.30
+      puede considerarse relevante; en física experimental se esperan valores mucho más altos.
+    </div>
+
+    <h2>El valor p (significación estadística)</h2>
+    <p>Además del valor de \( r \), es fundamental reportar el <strong>valor p</strong>:</p>
+    <ul>
+      <li><strong>H₀:</strong> \( \rho = 0 \) (no hay correlación lineal en la población)</li>
+      <li><strong>H₁:</strong> \( \rho \neq 0 \) (existe correlación lineal en la población)</li>
+    </ul>
+    <div class="card highlight">
+      <strong>Regla habitual (α = 0.05):</strong><br>
+      Si <strong>p &lt; 0.05</strong> → se rechaza H₀ → la correlación es estadísticamente significativa.<br>
+      Si <strong>p ≥ 0.05</strong> → no se rechaza H₀ → no hay evidencia suficiente de correlación lineal.
+    </div>
+    <p>
+      <strong>Advertencia:</strong> Un valor de \( r \) puede ser pequeño pero significativo si la muestra es
+      muy grande. Un valor grande puede no ser significativo si la muestra es muy pequeña.
+      <strong>Siempre reporta ambos:</strong> el valor de \( r \) y el valor p.
+    </p>
+
+    <h2>Supuestos para el uso válido de Pearson</h2>
+    <ol>
+      <li><strong>Relación lineal</strong> — La relación debe ser aproximadamente lineal. Siempre graficar un scatter plot.</li>
+      <li><strong>Variables cuantitativas</strong> — Ambas de intervalo o de razón.</li>
+      <li><strong>Distribución aproximadamente normal (bivariada)</strong> — Con muestras moderadas o grandes es bastante robusto.</li>
+      <li><strong>Homocedasticidad</strong> — Variabilidad aproximadamente constante a lo largo de los valores.</li>
+      <li><strong>Independencia de las observaciones</strong>.</li>
+      <li><strong>Ausencia de valores atípicos extremos</strong> — Los outliers pueden distorsionar mucho \( r \).</li>
+    </ol>
+
+    <h3>Cómo verificar los supuestos</h3>
+    <table>
+      <thead>
+        <tr><th>Supuesto</th><th>Cómo verificarlo</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Linealidad</td><td>Diagrama de dispersión + línea de regresión</td></tr>
+        <tr><td>Normalidad</td><td>Histogramas, Q-Q plots, pruebas de normalidad</td></tr>
+        <tr><td>Homocedasticidad</td><td>Observar si la dispersión es constante en el scatter plot</td></tr>
+        <tr><td>Outliers</td><td>Boxplots, scatter plot, distancia de Cook</td></tr>
+        <tr><td>Independencia</td><td>Diseño del estudio / conocimiento del dominio</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Buenas prácticas de interpretación</h2>
+    <ol>
+      <li><strong>Siempre visualiza</strong> los datos antes de interpretar \( r \).</li>
+      <li>Reporta <strong>\( r \)</strong> y <strong>valor p</strong>.</li>
+      <li>Indica el <strong>tamaño de la muestra</strong> (\( n \)).</li>
+      <li>Menciona si se cumplen (o no) los supuestos principales.</li>
+      <li>No exagerues la interpretación de correlaciones débiles.</li>
+      <li>Nunca afirmes causalidad solo con base en \( r \).</li>
+    </ol>
+
+    <p style="margin-top:2rem;">
+      <a class="btn btn-outline" href="02-formula-y-calculo.html">← Anterior</a>
+      <a class="btn" href="04-propiedades.html">Siguiente: Propiedades →</a>
+    </p>
+  </main>
+
+  <footer>
+    <p>Material generado para la asignatura GAD-2401 · Uso educativo</p>
+  </footer>
+</body>
+</html>

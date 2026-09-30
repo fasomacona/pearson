@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1. Introducción | Coeficiente de Pearson</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}]});"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>2.1.1 Coeficiente de Correlación de Pearson</h1>
+      <p>1. Introducción</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <a href="index.html">Inicio</a>
+      <a href="01-introduccion.html" class="active">1. Introducción</a>
+      <a href="02-formula-y-calculo.html">2. Fórmula</a>
+      <a href="03-interpretacion.html">3. Interpretación</a>
+      <a href="04-propiedades.html">4. Propiedades</a>
+      <a href="05-ejemplos.html">5. Ejemplos</a>
+      <a href="ejercicios/ejercicios-manuales.html">Ejercicios</a>
+    </div>
+  </nav>
+
+  <main>
+    <h2>¿Qué es el coeficiente de correlación de Pearson?</h2>
+    <p>
+      El <strong>coeficiente de correlación de Pearson</strong> (también llamado coeficiente de correlación
+      producto-momento de Pearson) es una medida estadística que cuantifica la <strong>fuerza</strong> y la
+      <strong>dirección</strong> de la relación <strong>lineal</strong> entre dos variables cuantitativas.
+    </p>
+    <p>
+      Se denota normalmente con la letra \( r \) (para una muestra) o \( \rho \) (rho, para la población).
+    </p>
+
+    <h3>Rango de valores</h3>
+    <div class="math-block">
+      \[ -1 \leq r \leq +1 \]
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Valor de \( r \)</th>
+          <th>Interpretación</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>\( r = +1 \)</td><td>Correlación lineal positiva perfecta</td></tr>
+        <tr><td>\( r = -1 \)</td><td>Correlación lineal negativa perfecta</td></tr>
+        <tr><td>\( r = 0 \)</td><td>Ausencia de correlación lineal</td></tr>
+        <tr><td>\( 0 &lt; r &lt; 1 \)</td><td>Correlación positiva de distinta fuerza</td></tr>
+        <tr><td>\( -1 &lt; r &lt; 0 \)</td><td>Correlación negativa de distinta fuerza</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Historia breve</h2>
+    <p>
+      El coeficiente fue desarrollado por <strong>Karl Pearson</strong> (1857-1936) a finales del siglo XIX,
+      basándose en ideas previas de Francis Galton. Pearson formalizó la fórmula que hoy usamos y la popularizó
+      en el campo de la estadística y la biometría.
+    </p>
+
+    <h2>¿Qué significa realmente?</h2>
+    <p>Cuando calculamos \( r \) estamos respondiendo a la pregunta:</p>
+    <div class="card highlight">
+      <p style="margin:0; font-style:italic;">
+        «¿En qué medida los valores altos de una variable se asocian con valores altos (o bajos) de la otra
+        variable, de forma lineal?»
+      </p>
+    </div>
+
+    <h3>Ejemplos intuitivos</h3>
+    <ul>
+      <li><strong>Relación positiva fuerte:</strong> Estatura y peso de las personas. Personas más altas tienden a pesar más.</li>
+      <li><strong>Relación negativa fuerte:</strong> Velocidad del vehículo y tiempo de viaje (a mayor velocidad, menor tiempo).</li>
+      <li><strong>Relación cercana a cero:</strong> Número de zapato y coeficiente intelectual (no hay relación lineal esperable).</li>
+    </ul>
+
+    <div class="card warning">
+      <h3 style="margin-top:0;">Diferencia importante: correlación ≠ causalidad</h3>
+      <p style="margin-bottom:0;">
+        Aunque el coeficiente de Pearson es muy útil, <strong>nunca</strong> debemos concluir que una variable
+        causa a la otra solo porque están correlacionadas. La correlación mide <strong>asociación</strong>, no
+        <strong>causa-efecto</strong>.
+      </p>
+    </div>
+
+    <h2>¿Cuándo se utiliza?</h2>
+    <ul>
+      <li>Análisis exploratorio de datos (EDA)</li>
+      <li>Selección de variables antes de construir modelos</li>
+      <li>Validación de hipótesis sobre relaciones lineales</li>
+      <li>Detección de multicolinealidad en regresión</li>
+      <li>Estudios en psicología, economía, biología, ingeniería, marketing, etc.</li>
+    </ul>
+
+    <div class="nota">
+      <strong>Resumen:</strong> El coeficiente de Pearson es una medida estandarizada (entre −1 y 1) de la
+      relación lineal entre dos variables numéricas. Es una de las herramientas más básicas y poderosas del
+      análisis de datos, pero debe usarse con conocimiento de sus supuestos y limitaciones.
+    </div>
+
+    <p style="margin-top:2rem;">
+      <a class="btn" href="02-formula-y-calculo.html">Siguiente: Fórmula y cálculo →</a>
+    </p>
+  </main>
+
+  <footer>
+    <p>Material generado para la asignatura GAD-2401 · Uso educativo</p>
+  </footer>
+</body>
+</html>
